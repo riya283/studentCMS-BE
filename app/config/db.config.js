@@ -3,7 +3,7 @@ module.exports = {
     USER: "root",
     PASSWORD: "root",
     DB: "studentCMS",
-    dialect: "mysql",
+    dialect: "postgres",
     pool: {
       max: 5,
       min: 0,
