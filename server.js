@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 const db = require("./app/models");
 
 var corsOptions = {
-    origin: "http://localhost:3000"
+    origin: "https://student-cms-app.herokuapp.com"
 };
 
 app.use(cors(corsOptions));
