@@ -29,6 +29,10 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: false,
       defaultValue: Sequelize.NOW
     },
+    grade: {
+      type: Sequelize.FLOAT,
+      allowNull: false
+    },
     status: {
       type: Sequelize.ENUM("active", "deleted"),
       defaultValue: "active"

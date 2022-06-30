@@ -92,7 +92,10 @@ exports.getStudentInfoByFilter = (req, res) => {
         orderBy.push(['registrationDate', 'ASC']);
     } else if (req.body.filterType === "BY_NAME_ASC") {
         orderBy.push(['name', 'ASC']);
-    } else {
+    } else if (req.body.filterType === "BY_GRADE_ASC") {
+        orderBy.push(['grade', 'ASC']);
+    }
+     else {
         res.status(500).send({
             message:
                 "Invalid Filter Value"
