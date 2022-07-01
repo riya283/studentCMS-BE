@@ -14,7 +14,9 @@ module.exports = app => {
   // Retrieve all students
   router.post("/byFilter", studentInfo.getStudentInfoByFilter);
 
-  
+  //Retrive aa students by user input
+  router.post("/getStudentInfoByUserInput", studentInfo.getStudentInfoByUserInput);
+
 
   // Update a student with id
   router.post("/update", studentInfo.updateStudent);

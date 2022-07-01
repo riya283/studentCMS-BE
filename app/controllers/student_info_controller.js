@@ -95,7 +95,7 @@ exports.getStudentInfoByFilter = (req, res) => {
     } else if (req.body.filterType === "BY_GRADE_ASC") {
         orderBy.push(['grade', 'ASC']);
     }
-     else {
+    else {
         res.status(500).send({
             message:
                 "Invalid Filter Value"
@@ -113,4 +113,20 @@ exports.getStudentInfoByFilter = (req, res) => {
             });
         });
 };
+
+//filter student by user input
+exports.getStudentInfoByUserInput = (req, res) => {
+
+    student_info.findAll({ where: { name: { [Op.iLike]: req.body.filterTypeByUserInput } } }).
+        then(data => {
+            res.send(data);
+        }).catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while filtering student info."
+            });
+        });
+
+};
+
 
